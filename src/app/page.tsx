@@ -4,10 +4,9 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Survey', href: 'survey.tsx' },
+  { name: 'Results', href: 'results.tsx' },
+  { name: 'Resources', href: 'resources.tsx' },
 ]
 
 export default function Example() {
@@ -143,7 +142,7 @@ export default function Example() {
                     We're changing the way people live their lives.
                   </h1>
                   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                  Welcome to a revolutionary health app designed in collaboration with the NHS to prioritize your well-being. [App Name] leverages cutting-edge AI to provide personalized health insights based on your unique profile, including ethnicity, cultural background, and environmental factors.
+                  Welcome to a revolutionary health app designed in collaboration with the NHS to prioritize your well-being. LifeSavers leverages cutting-edge AI to provide personalized health insights based on your unique profile, including ethnicity, cultural background, and environmental factors.
                   </p>
                   <div className="mt-10 flex items-center gap-x-6">
                     <a
