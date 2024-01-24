@@ -10,6 +10,13 @@ const navigation = [
   { name: 'Resources', href: '/resources' },
 ]
 
+const onChange = (e) => {
+  const currentYear = new Date().getFullYear();
+  const year = e.target.value.split("-")[0];
+  const age = currentYear - year;
+  if (age < 18) setError("Invalid age");
+}
+
 
 export default function SurveyPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -245,8 +252,25 @@ export default function SurveyPage() {
               </div>
             </div>
 
+            <div>
+              <label htmlFor="number" className="block text-sm font-medium leading-6 text-gray-900">How old are you?</label>
+              <div className="relative mt-2 rounded-md shadow-sm">
+              <label htmlFor="number-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a number:</label>
+                
+              <input type="number" id="number-input" aria-describedby="helper-text-explanation" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  min="18" max="120" placeholder="18" required></input>
+                
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                  <svg className="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+              </div>
 
-          
+              
+              
+            </div>
+
+
             
 
           </div>
@@ -352,6 +376,15 @@ export default function SurveyPage() {
           Save
         </button>
       </div>
+
+      <div className="flex items-center justify-center bg-white p-8">
+    <div className="mx-auto w-full max-w-xs">
+      
+
+
+    </div>
+  </div>
+
     </form>
       </main>
     </div>
