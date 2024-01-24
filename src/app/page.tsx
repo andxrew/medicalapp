@@ -267,11 +267,5 @@ export default function HeroInitial() {
         </div>
       </div>
     </div>
-
-
-    </div>
-
-
-
-  )
-}
+  </div>
+)}
