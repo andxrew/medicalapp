@@ -10,6 +10,12 @@ const navigation = [
   { name: 'Resources', href: '/resources' },
 ]
 
+const stats = [
+  { name: 'Total Subscribers', stat: '71,897' },
+  { name: 'Avg. Open Rate', stat: '58.16%' },
+  { name: 'Avg. Click Rate', stat: '24.57%' },
+]
+
 
 export default function ResultsPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -98,7 +104,23 @@ export default function ResultsPage() {
             </Dialog.Panel>
           </Dialog>
         </header>
-        <main>
+      <div className="mt-10 p-5">
+        <main>         
+          {/* stats */}
+          <div className="mt-5 p-5">
+            <div className="flex items-center justify-center mt-5 p-5">
+              <h3 className="text-base font-semibold leading-6 text-gray-900">Last 30 days</h3>
+            </div>
+            <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+              {stats.map((item) => (
+                <div key={item.name} className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
+                  <dt className="truncate text-sm font-medium text-gray-500">{item.name}</dt>
+                  <dd className="mt-1 text-3xl font-semibold tracking-tight text-gray-900">{item.stat}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
           <div className="overflow-hidden bg-white shadow sm:rounded-lg">
           <div className="px-4 py-6 sm:px-6">
             <h3 className="text-base font-semibold leading-7 text-gray-900">Survey Results</h3>
@@ -169,5 +191,6 @@ export default function ResultsPage() {
           </div>
         </div>
       </main>
+    </div>
     </div>
   )}
