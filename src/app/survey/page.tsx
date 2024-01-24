@@ -24,7 +24,7 @@ export default function SurveyPage() {
               <span className="sr-only">Life Savers</span>
               <img
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src="https://static.vecteezy.com/system/resources/thumbnails/017/173/328/small/heart-wave-medical-flat-icons-png.png"
                 alt=""
               />
             </a>
@@ -199,6 +199,55 @@ export default function SurveyPage() {
                 </select>
               </div>
             </div>
+
+            <div className="sm:col-span-3">
+              <label htmlFor="Excercise" className="block text-sm font-medium leading-7 text-gray-900">
+                How many times do you excercise in a week?
+              </label>
+              <div className="mt-2">
+                <select
+                  id="excercise"
+                  name="excercise"
+                  autoComplete="excercise-freq"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                  <option value="" selected="selected" disabled="disabled">-- select one --</option>
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5+</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div className="sm:col-span-3">
+              <label htmlFor="fastFood" className="block text-sm font-medium leading-7 text-gray-900">
+                How many times do you eat fast food in a week?
+              </label>
+              <div className="mt-2">
+                <select
+                  id="fastFood"
+                  name="fastFood"
+                  autoComplete="fastFood-freq"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                  <option value="" selected="selected" disabled="disabled">-- select one --</option>
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5+</option>
+                </select>
+              </div>
+            </div>
+
+
+          
+            
 
           </div>
         </div>
