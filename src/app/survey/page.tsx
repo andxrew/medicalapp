@@ -10,12 +10,6 @@ const navigation = [
   { name: 'Resources', href: '/resources' },
 ]
 
-const onChange = (e) => {
-  const currentYear = new Date().getFullYear();
-  const year = e.target.value.split("-")[0];
-  const age = currentYear - year;
-  if (age < 18) setError("Invalid age");
-}
 
 
 export default function SurveyPage() {
