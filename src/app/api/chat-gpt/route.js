@@ -14,15 +14,15 @@ export async function POST(request){
     })
 
     
-
+    // sends message
     const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [
-            {
+            {   // directed at ai
                 role: "system",
                 content:"Act as if you are a qualified doctor that will take user inputs that relate to themselves such as Age, weight, height, sex, family history and ethnicity and then comparing statistic such as from the NHS, you will then assess the users health risks and let them know if they need to see a doctor in a simple concise manner."
             },
-            {
+            {   // directed from user
                 role: "user",
                 content: "I am 19 years old i weight 70kg and eat take away twice a week. I am also from pakistani. What health conditions will i be at risk from?"
             }
