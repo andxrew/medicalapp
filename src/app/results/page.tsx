@@ -17,6 +17,7 @@ const stats = [
 ]
 
 
+const [choices,setChoices] = useState([]);
 
 export default function ResultsPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -207,10 +208,18 @@ export default function ResultsPage() {
               someData: true,
             }),
           });
-          console.log("RESPONSE: ", response)
+          const result = await response.json();
+          setChoices(result.choices)
+
         }}
         > Hit api
         </button>
+        {choices.map(choice => {
+          console.log(choice)
+          return (
+            <p key={choice.index}>{choice.message.content}</p>
+          )
+        })}
 
 
       </main>
