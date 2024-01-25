@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react'
+import { useState, onEffect } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { PaperClipIcon } from '@heroicons/react/20/solid'
@@ -16,12 +16,29 @@ const stats = [
   { name: 'Avg. Click Rate', stat: '24.57%' },
 ]
 
-var contentai = null;
+var contentai = "Loading AI Response...";
 
 
 export default function ResultsPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [choices,setChoices] = useState<any[]>([])
+  async function apiclick() {
+    console.log('I was triggered during render') 
+    const response = await fetch("/api/chat-gpt" , {
+  
+      method: "POST",
+  
+      headers: {
+        "Content-Type":"application.json", 
+      },
+      body: JSON.stringify({
+        someData: true,
+      }),
+    });
+    const result = await response.json();
+    setChoices(result.choices)
+  }
+  apiclick();
 
   return (
     <div className="bg-white">
@@ -148,7 +165,7 @@ export default function ResultsPage() {
                 <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">$120,000</dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-900">AI Assistant recommendation</dt>
+                <dt className="text-sm font-medium text-gray-900">AI Doctor recommendation</dt>
                 <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                 <p>{contentai}</p>
                 
@@ -194,26 +211,8 @@ export default function ResultsPage() {
         </div>
         
         {/* button to fetch data from api */}
-        <button
-        onClick={async () => {
-          console.log('I was triggered during render') 
-          const response = await fetch("/api/chat-gpt" , {
+        
 
-            method: "POST",
-
-            headers: {
-              "Content-Type":"application.json", 
-            },
-            body: JSON.stringify({
-              someData: true,
-            }),
-          });
-          const result = await response.json();
-          setChoices(result.choices)
-
-        }}
-        > Hit api
-        </button>
         {choices.map(choice => {
                 console.log(choice)
                 contentai = <p key={choice.index}>{choice.message.content}</p>
