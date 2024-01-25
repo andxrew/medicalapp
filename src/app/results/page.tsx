@@ -150,9 +150,12 @@ export default function ResultsPage() {
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-900">AI Assistant recommendation</dt>
                 <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur
-                  qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud
-                  pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
+                {choices.map(choice => {
+                console.log(choice)
+                 return (
+               <p key={choice.index}>{choice.message.content}</p>
+          )
+        })}
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -215,12 +218,7 @@ export default function ResultsPage() {
         }}
         > Hit api
         </button>
-        {choices.map(choice => {
-          console.log(choice)
-          return (
-            <p key={choice.index}>{choice.message.content}</p>
-          )
-        })}
+        
 
 
       </main>
