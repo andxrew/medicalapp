@@ -17,10 +17,11 @@ const stats = [
 ]
 
 
-const [choices,setChoices] = useState([]);
+
 
 export default function ResultsPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [choices,setChoices] = useState<any[]>([])
 
   return (
     <div className="bg-white">
