@@ -191,7 +191,30 @@ export default function ResultsPage() {
             </dl>
           </div>
         </div>
+        
+        {/* button to fetch data from api */}
+        <button
+        onClick={async () => {
+          console.log('I was triggered during render') 
+          const response = await fetch("/api/chat-gpt" , {
+
+            method: "POST",
+
+            headers: {
+              "Content-Type":"application.json", 
+            },
+            body: JSON.stringify({
+              someData: true,
+            }),
+          });
+          console.log("RESPONSE: ", response)
+        }}
+        > Hit api
+        </button>
+
+
       </main>
     </div>
     </div>
-  )}
+  );
+}  
