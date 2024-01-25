@@ -1,8 +1,9 @@
 "use client"
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import {  PhotoIcon, UserCircleIcon } from '@heroicons/react/20/solid'
+
 
 const navigation = [
   { name: 'Survey', href: '/survey' },
@@ -14,6 +15,41 @@ const navigation = [
 
 export default function SurveyPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [ethnicityVal, setVal1] = useState("")
+  const [ageVal, setVal2] = useState("")
+  const [genderVal, setVal3] = useState("")
+  const [excerciseVal, setVal4] = useState("")
+  const [fastfoodVal, setVal5] = useState("")
+  const [weightVal, setVal6] = useState("")
+  const [heightVal, setVal7] = useState("")
+
+  // outputs the value on click
+  const click = () => {
+    alert("my ethnicity: " + ethnicityVal + " my age: " + ageVal + " my gender: " + genderVal + " my excercise: " + excerciseVal + " fast food: " + fastfoodVal +" weight: "+ weightVal + " height: " + heightVal)
+  }
+
+  // deals with the changes:
+  const ethnicityChange = (event: { target: { value: SetStateAction<string> } }) => {
+    setVal1(event.target.value)
+  }
+  const ageChange = (event: { target: { value: SetStateAction<string> } }) => {
+    setVal2(event.target.value)
+  }
+  const genderChange = (event: { target: { value: SetStateAction<string> } }) => {
+    setVal3(event.target.value)
+  }
+  const excerciseChange = (event: { target: { value: SetStateAction<string> } }) => {
+    setVal4(event.target.value)
+  }
+  const fastFoodChange = (event: { target: { value: SetStateAction<string> } }) => {
+    setVal5(event.target.value)
+  }
+  const weightChange = (event: { target: { value: SetStateAction<string> } }) => {
+    setVal6(event.target.value)
+  }
+  const heightChange = (event: { target: { value: SetStateAction<string> } }) => {
+    setVal7(event.target.value)
+  }
   
   return (
     <div className="bg-white">
@@ -140,6 +176,7 @@ export default function SurveyPage() {
                   name="Ethnicity"
                   autoComplete="Ethnicity-name"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  onChange={ethnicityChange}
                 >
                   <option value="" selected="selected" disabled="disabled">-- select one --</option>
                   <optgroup label="White">
@@ -192,6 +229,7 @@ export default function SurveyPage() {
                   name="gender"
                   autoComplete="gender-name"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  onChange={genderChange}
                 >
                   <option value="" selected="selected" disabled="disabled">-- select one --</option>
                   <option>Male</option>
@@ -211,6 +249,7 @@ export default function SurveyPage() {
                   name="excercise"
                   autoComplete="excercise-freq"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  onChange={excerciseChange}
                 >
                   <option value="" selected="selected" disabled="disabled">-- select one --</option>
                   <option>0</option>
@@ -234,6 +273,7 @@ export default function SurveyPage() {
                   name="fastFood"
                   autoComplete="fastFood-freq"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  onChange={fastFoodChange}
                 >
                   <option value="" selected="selected" disabled="disabled">-- select one --</option>
                   <option>0</option>
@@ -251,7 +291,8 @@ export default function SurveyPage() {
               <div className="relative mt-2 rounded-md shadow-sm">
               <label htmlFor="number-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a number:</label>
                 
-              <input type="number" id="number-input" aria-describedby="helper-text-explanation" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  min="18" max="120" placeholder="18" required></input>
+              <input type="number" id="number-input" aria-describedby="helper-text-explanation" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  min="18" max="120" placeholder="18" required
+                onChange={ageChange}></input>
                 
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                   <svg className="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -264,7 +305,43 @@ export default function SurveyPage() {
               
             </div>
 
+            <div>
+              <label htmlFor="number" className="block text-sm font-medium leading-6 text-gray-900">Weight</label>
+              <div className="relative mt-2 rounded-md shadow-sm">
+              <label htmlFor="number-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a number:</label>
+                
+              <input type="weight" id="weight-input" aria-describedby="helper-text-explanation" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"   placeholder="Enter Your weight in Kg" required
+                onChange={weightChange}></input>
+                
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                  <svg className="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+              </div>
 
+              
+              
+            </div>
+
+            <div>
+              <label htmlFor="number" className="block text-sm font-medium leading-6 text-gray-900">Height</label>
+              <div className="relative mt-2 rounded-md shadow-sm">
+              <label htmlFor="number-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a number:</label>
+                
+              <input type="height" id="height-input" aria-describedby="helper-text-explanation" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"   placeholder="Enter Your height in cm" required
+                onChange={heightChange}></input>
+                
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                  <svg className="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+              </div>
+
+              
+              
+            </div>
             
 
           </div>
@@ -360,12 +437,15 @@ export default function SurveyPage() {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
+        <button type="button" className="text-sm font-semibold leading-6 text-gray-900" >
           Cancel
         </button>
         <button
+          onClick = {click}
           type="submit"
           className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+
+
         >
           Save
         </button>
