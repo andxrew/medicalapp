@@ -214,12 +214,8 @@ export default function ResultsPage() {
         }}
         > Hit api
         </button>
-        {choices.map(choice => {
-                console.log(choice)
-                contentai = <p key={choice.index}>{choice.message.content}</p>
-                 
-        })}
         
+
 
       </main>
     </div>
