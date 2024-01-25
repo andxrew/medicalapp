@@ -16,7 +16,7 @@ const stats = [
   { name: 'Avg. Click Rate', stat: '24.57%' },
 ]
 
-
+var contentai = null;
 
 
 export default function ResultsPage() {
@@ -150,12 +150,8 @@ export default function ResultsPage() {
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-900">AI Assistant recommendation</dt>
                 <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                {choices.map(choice => {
-                console.log(choice)
-                 return (
-               <p key={choice.index}>{choice.message.content}</p>
-          )
-        })}
+                <p>{contentai}</p>
+                
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -218,8 +214,12 @@ export default function ResultsPage() {
         }}
         > Hit api
         </button>
+        {choices.map(choice => {
+                console.log(choice)
+                contentai = <p key={choice.index}>{choice.message.content}</p>
+                 
+        })}
         
-
 
       </main>
     </div>
