@@ -17,12 +17,14 @@ const stats = [
 ]
 
 var contentai = "Loading AI Response...";
+var ran = false;
 
 
 export default function ResultsPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [choices,setChoices] = useState<any[]>([])
   async function apiclick() {
+    ran=true;
     console.log('I was triggered during render') 
     const response = await fetch("/api/chat-gpt" , {
   
@@ -38,7 +40,7 @@ export default function ResultsPage() {
     const result = await response.json();
     setChoices(result.choices)
   }
-  apiclick();
+  if (ran==false) {apiclick();}
 
   return (
     <div className="bg-white">
@@ -211,7 +213,7 @@ export default function ResultsPage() {
         </div>
         
         {/* button to fetch data from api */}
-        
+        .
 
         {choices.map(choice => {
                 console.log(choice)
