@@ -1,8 +1,9 @@
 "use client"
-import { useState, onEffect } from 'react'
+import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { PaperClipIcon } from '@heroicons/react/20/solid'
+import { useSearchParams } from 'next/navigation';
 
 const navigation = [
   { name: 'Survey', href: '/survey' },
@@ -21,6 +22,10 @@ var ran = false;
 
 
 export default function ResultsPage() {
+  const searchParams = useSearchParams();
+  const Ethnicity = searchParams.get("ethnicityVal1");
+
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [choices,setChoices] = useState<any[]>([])
   async function apiclick() {
@@ -151,8 +156,8 @@ export default function ResultsPage() {
           <div className="border-t border-gray-100">
             <dl className="divide-y divide-gray-100">
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-900">Full name</dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Margot Foster</dd>
+                <dt className="text-sm font-medium text-gray-900">Ethnicity</dt>
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{Ethnicity}</dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-900">Application for</dt>
