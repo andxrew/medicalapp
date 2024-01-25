@@ -17,6 +17,7 @@ const stats = [
 ]
 
 
+
 export default function ResultsPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
