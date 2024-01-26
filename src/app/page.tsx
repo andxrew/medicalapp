@@ -13,12 +13,36 @@ const navigation = [
 const posts = [
   {
     id: 1,
-    title: 'Identify your issues',
-    href: '#',
+    title: 'Create a unique profile',
+    href: '/survey',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
+      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    date: 'Mar 16, 2020',
+    datetime: '2020-03-16',
+    
+  },
+  {
+    id: 2,
+    title: 'Identify your risks',
+    href: '/results',
+    description:
+      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1551927336-09d50efd69cd?q=80&w=876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    date: 'Mar 16, 2020',
+    datetime: '2020-03-16',
+    
+  },
+  {
+    id: 3,
+    title: 'Get the help you need',
+    href: '/resources',
+    description:
+      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1461532257246-777de18cd58b?q=80&w=876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
     
@@ -246,9 +270,9 @@ export default function HeroInitial() {
               <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
 
               <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                <time dateTime={post.datetime} className="mr-8">
+                {/* <time dateTime={post.datetime} className="mr-8">
                   {post.date}
-                </time>
+                </time> */}
                 <div className="-ml-4 flex items-center gap-x-4">
                   <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
                     <circle cx={1} cy={1} r={1} />
