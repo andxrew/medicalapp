@@ -12,9 +12,9 @@ const navigation = [
 ]
 
 const stats = [
-  { name: 'Total Subscribers', stat: '71,897' },
-  { name: 'Avg. Open Rate', stat: '58.16%' },
-  { name: 'Avg. Click Rate', stat: '24.57%' },
+  { name: 'Healthy BMI', stat: '18.5 to 24.9' },
+  { name: 'Average Activeness', stat: '150 minutes/week' },
+  { name: 'Risk of Health Conditions', stat: 'Medium' },
 ]
 
 var contentai = "Loading AI Response...";
@@ -42,8 +42,6 @@ export default function ResultsPage() {
     setChoices(result.choices)
   }
   if (ran==false) {apiclick();}
-
-  const data = JSON.parse(users);
 
   return (
     <div className="bg-white">
@@ -134,7 +132,7 @@ export default function ResultsPage() {
           {/* stats */}
           <div className="mt-5 p-5">
             <div className="flex items-center justify-center mt-5 p-5">
-              <h3 className="text-base font-semibold leading-6 text-gray-900">Last 30 days</h3>
+              <h3 className="text-base font-semibold leading-6 text-gray-900">Helpful Info</h3>
             </div>
             <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
               {stats.map((item) => (
@@ -155,19 +153,15 @@ export default function ResultsPage() {
             <dl className="divide-y divide-gray-100">
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-900">Ethnicity</dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Ethnicity</dd>
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Pakistani</dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-900">Application for</dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Backend Developer</dd>
+                <dt className="text-sm font-medium text-gray-900">BMI</dt>
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">20.4</dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-900">Email address</dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">margotfoster@example.com</dd>
-              </div>
-              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-900">Discounts Price</dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">$120,000</dd>
+                <dt className="text-sm font-medium text-gray-900">Discounted Price Of Recommended Professionals</dt>
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">£59.99</dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-900">AI Doctor recommendation</dt>
@@ -184,7 +178,7 @@ export default function ResultsPage() {
                       <div className="flex w-0 flex-1 items-center">
                         <PaperClipIcon className="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
                         <div className="ml-4 flex min-w-0 flex-1 gap-2">
-                          <span className="truncate font-medium">resume_back_end_developer.pdf</span>
+                          <span className="truncate font-medium">recommended-healthcare-professionals.pdf</span>
                           <span className="flex-shrink-0 text-gray-400">2.4mb</span>
                         </div>
                       </div>
@@ -198,7 +192,7 @@ export default function ResultsPage() {
                       <div className="flex w-0 flex-1 items-center">
                         <PaperClipIcon className="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
                         <div className="ml-4 flex min-w-0 flex-1 gap-2">
-                          <span className="truncate font-medium">coverletter_back_end_developer.pdf</span>
+                          <span className="truncate font-medium">statistiacal-data.pdf</span>
                           <span className="flex-shrink-0 text-gray-400">4.5mb</span>
                         </div>
                       </div>
