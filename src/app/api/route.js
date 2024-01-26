@@ -1,5 +1,5 @@
 /* you will need to download this on your version to run it
- "npm install openai" */
+ "npm install openai" --- it is automatically installed when you do npm i (drew)*/ 
  import { NextResponse } from "next/server";
  import OpenAI from "openai";
  
