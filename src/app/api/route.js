@@ -20,11 +20,11 @@
          messages: [
              {   // directed at ai
                  role: "system",
-                 content:"Act as if you are a qualified doctor that will take user inputs that relate to themselves such as Age, weight, height, sex, family history and ethnicity and then comparing statistic such as from the NHS, you will then assess the users health risks and let them know if they need to see a doctor in a simple concise manner."
+                 content:"Act as if you are a qualified doctor that will take user inputs that relate to themselves such as Age, weight, height, sex, family history and ethnicity and then comparing statistic such as from the NHS, you will then assess the users health risks and let them know if they need to see a doctor in a simple concise manner but still detailed."
              },
              {   // directed from user
                  role: "user",
-                 content: "I am 19 years old i weight 70kg and eat take away twice a week. I am also from pakistani. What health conditions will i be at risk from?"
+                 content: "I am 19 years old i weight 70kg and eat take away twice a week. I am also from a african background. What health conditions will i be at risk from? Are there any medicines that i may be vulnerable to?"
              }
          ],
          temperature: 0,
